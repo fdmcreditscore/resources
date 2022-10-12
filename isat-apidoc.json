@@ -1,0 +1,507 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "CDD API",
+        "description": "Customer Due Dilligence",
+        "version": "0.1"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:9020/isat-client",
+            "description": "Generated server url"
+        }
+    ],
+    "paths": {
+        "/customer": {
+            "post": {
+                "tags": [
+                    "customer-controller"
+                ],
+                "operationId": "getCollection",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ControllerRequestDto"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TelcoResponseDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tenure": {
+            "get": {
+                "tags": [
+                    "customer-controller"
+                ],
+                "operationId": "getTenure",
+                "parameters": [
+                    {
+                        "name": "msisdn",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "refid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TelcoResponseDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/saldo": {
+            "get": {
+                "tags": [
+                    "customer-controller"
+                ],
+                "operationId": "getSaldo",
+                "parameters": [
+                    {
+                        "name": "msisdn",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "refid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TelcoResponseDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/quotadata": {
+            "get": {
+                "tags": [
+                    "customer-controller"
+                ],
+                "operationId": "getQuotadata",
+                "parameters": [
+                    {
+                        "name": "msisdn",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "refid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TelcoResponseDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/paketdata": {
+            "get": {
+                "tags": [
+                    "customer-controller"
+                ],
+                "operationId": "getPaketData",
+                "parameters": [
+                    {
+                        "name": "msisdn",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "refid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TelcoResponseDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/jeniskartu": {
+            "get": {
+                "tags": [
+                    "customer-controller"
+                ],
+                "operationId": "getJenisKartu",
+                "parameters": [
+                    {
+                        "name": "msisdn",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "refid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TelcoResponseDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/expire": {
+            "get": {
+                "tags": [
+                    "customer-controller"
+                ],
+                "operationId": "getExpire",
+                "parameters": [
+                    {
+                        "name": "msisdn",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "refid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TelcoResponseDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/dataexpire": {
+            "get": {
+                "tags": [
+                    "customer-controller"
+                ],
+                "operationId": "getDataExpire",
+                "parameters": [
+                    {
+                        "name": "msisdn",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "refid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TelcoResponseDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/billing": {
+            "get": {
+                "tags": [
+                    "customer-controller"
+                ],
+                "operationId": "getBilling",
+                "parameters": [
+                    {
+                        "name": "msisdn",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "refid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TelcoResponseDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/aktivasi": {
+            "get": {
+                "tags": [
+                    "customer-controller"
+                ],
+                "operationId": "getActivation",
+                "parameters": [
+                    {
+                        "name": "msisdn",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "refid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TelcoResponseDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/active": {
+            "get": {
+                "tags": [
+                    "customer-controller"
+                ],
+                "operationId": "getActive",
+                "parameters": [
+                    {
+                        "name": "msisdn",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "refid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TelcoResponseDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ControllerRequestDto": {
+                "type": "object",
+                "properties": {
+                    "refid": {
+                        "type": "string"
+                    },
+                    "msisdn": {
+                        "type": "string"
+                    }
+                }
+            },
+            "TelcoApiResponseDto": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "responseDesc": {
+                        "type": "string"
+                    }
+                }
+            },
+            "TelcoMsisdnInfoDto": {
+                "type": "object",
+                "properties": {
+                    "msisdnStatus": {
+                        "$ref": "#/components/schemas/TelcoApiResponseDto"
+                    },
+                    "cardType": {
+                        "$ref": "#/components/schemas/TelcoApiResponseDto"
+                    },
+                    "dataPackage": {
+                        "$ref": "#/components/schemas/TelcoApiResponseDto"
+                    },
+                    "billing": {
+                        "$ref": "#/components/schemas/TelcoApiResponseDto"
+                    },
+                    "balance": {
+                        "$ref": "#/components/schemas/TelcoApiResponseDto"
+                    },
+                    "dataQuota": {
+                        "$ref": "#/components/schemas/TelcoApiResponseDto"
+                    },
+                    "tenure": {
+                        "$ref": "#/components/schemas/TelcoApiResponseDto"
+                    },
+                    "expiration": {
+                        "$ref": "#/components/schemas/TelcoApiResponseDto"
+                    },
+                    "dataExpiration": {
+                        "$ref": "#/components/schemas/TelcoApiResponseDto"
+                    },
+                    "activation": {
+                        "$ref": "#/components/schemas/TelcoApiResponseDto"
+                    }
+                }
+            },
+            "TelcoResponseDto": {
+                "type": "object",
+                "properties": {
+                    "refid": {
+                        "type": "string"
+                    },
+                    "msisdn": {
+                        "type": "string"
+                    },
+                    "responseCode": {
+                        "type": "string"
+                    },
+                    "responseDesc": {
+                        "type": "string"
+                    },
+                    "result": {
+                        "$ref": "#/components/schemas/TelcoMsisdnInfoDto"
+                    }
+                }
+            }
+        }
+    }
+}
