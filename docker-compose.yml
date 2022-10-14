@@ -30,26 +30,38 @@ services:
       build: keycloak
       restart: "no"
       environment:
-        - DB_VENDOR= POSTGRES
-        - DB_DATABASE= keycloak
-        - DB_USER= cdd
-        - DB_SCHEMA= public
-        - DB_PASSWORD= cdd
-        - KEYCLOAK_USER= admin
-        - KEYCLOAK_PASSWORD= admin
+        - KEYCLOAK_ADMIN=admin
+        - KEYCLOAK_ADMIN_PASSWORD=admin
       ports:
         - 8180:8080
       depends_on:
         - cdd-db
 
+    discovery:
+      container_name: service-discovery
+      build: discovery
+      restart: "no"
+      expose: 
+        - '8761'
+      ports:
+        - 8761:8761
+
     mock-isat:
       container_name: mock-isat
       build: mock-isat
       restart: "no"
-      port:
+      environment:
+        - SPRING_DATASOURCE_URL=jdbc:postgresql://cdd-db:5432/cdd-db 
+        - SPRING.DATASOURCE.USERNAME=cdd 
+        - SPRING.DATASOURCE.PASSWORD=cdd 
+        - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+      expose:
+        - '9001'
+      ports:
         - 9021:9021
       depends_on:
         - cdd-db
+        - discovery
 
 volumes:
   cdddb: {}
