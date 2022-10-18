@@ -1,0 +1,11 @@
+POST http://localhost:8900/mgmt/v1/registrations HTTP/1.1
+content-type: application/json
+
+{
+  "organizationName": "PT Sinar Buana",
+  "personName": "Johny Purwanto",
+  "personPhone": "08181800",
+  "personEmail": "fransmzh13@gmail.com",
+  "businessRegistrationNumber": "4058962234",
+  "taxId": "201093904"
+}

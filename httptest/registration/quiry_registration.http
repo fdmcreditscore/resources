@@ -1,0 +1,6 @@
+GET http://localhost:8900/mgmt/v1/registrations HTTP/1.1
+content-type: application/json
+
+###
+GET http://localhost:8900/mgmt/v1/registrations/3 HTTP/1.1
+content-type: application/json
