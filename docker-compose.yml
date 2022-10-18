@@ -2,8 +2,8 @@ version: '3.4'
 name: cdd
 
 services:
-    cdd-db:
-      container_name: cdd-db
+    cdddb:
+      container_name: cdddb
       build: database
       image: postgres:alpine
       restart: "no"
@@ -25,7 +25,7 @@ services:
       networks: 
         - docnet
 
-    cdd-keycloak:
+    keycloak:
       container_name: cdd-keycloak
       build: keycloak
       restart: "no"
@@ -35,7 +35,9 @@ services:
       ports:
         - 8180:8080
       depends_on:
-        - cdd-db
+        - cdddb
+      networks:
+        - docnet
 
     discovery:
       container_name: service-discovery
@@ -45,23 +47,28 @@ services:
         - '8761'
       ports:
         - 8761:8761
+      networks:
+        - docnet
 
     mock-isat:
       container_name: mock-isat
       build: mock-isat
       restart: "no"
       environment:
-        - SPRING_DATASOURCE_URL=jdbc:postgresql://cdd-db:5432/cdd-db 
+        - SPRING_DATASOURCE_URL=jdbc:postgresql://cdddb:5432/cdd-db 
         - SPRING.DATASOURCE.USERNAME=cdd 
         - SPRING.DATASOURCE.PASSWORD=cdd 
         - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+        - SPRING_BOOT_ADMIN_CLIENT_URL=http://discovery:8761/sbadmin
       expose:
         - '9001'
       ports:
         - 9021:9021
       depends_on:
-        - cdd-db
+        - cdddb
         - discovery
+      networks:
+        - docnet
 
 volumes:
   cdddb: {}
