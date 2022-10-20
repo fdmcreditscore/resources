@@ -50,9 +50,10 @@ services:
       networks:
         - docnet
 
-    mock-isat:
+    mockisat:
       container_name: mock-isat
       build: mock-isat
+      image: fransmzh/cdd-mock-isat
       restart: "no"
       environment:
         - SPRING_DATASOURCE_URL=jdbc:postgresql://cdddb:5432/cdd-db 
@@ -61,12 +62,38 @@ services:
         - SPRING_JPA_HIBERNATE_DDL_AUTO=none
         - SPRING_BOOT_ADMIN_CLIENT_URL=http://discovery:8761/sbadmin
       expose:
-        - '9001'
+        - '9021'
       ports:
         - 9021:9021
       depends_on:
         - cdddb
         - discovery
+      networks:
+        - docnet
+
+    telco-client:
+      container_name: telco-client
+      build: telco-client
+      image: fransmzh/cdd-telco-client
+      restart: "no"
+      environment:
+        - SPRING_DATASOURCE_URL=jdbc:postgresql://cdddb:5432/cdd-db 
+        - SPRING.DATASOURCE.USERNAME=cdd 
+        - SPRING.DATASOURCE.PASSWORD=cdd 
+        - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+        - SPRING_BOOT_ADMIN_CLIENT_URL=http://discovery:8761/sbadmin
+        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery:8761/eureka/
+        - INDOSAT_URL_BASE=http://mockisat:9021/subscribers
+        - INDOSAT_URL_ACCESSTOKEN=http://mockisat:9021/oauth2-client/accesstoken
+        - KEYCLOAK_SERVER-URL=http://keycloak:8180
+      expose:
+        - '9020'
+      ports:
+        - 9020:9020
+      depends_on:
+        - cdddb
+        - discovery
+        - mockisat
       networks:
         - docnet
 
