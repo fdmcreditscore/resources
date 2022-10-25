@@ -1,8 +1,14 @@
 POST http://latitude:8180/realms/hujanbadai/protocol/openid-connect/token HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
-client_id=SIBU28383
-&client_secret=aBCXllBc53LuHwPy8o8WrrpID36zrK1P
+client_id=AQ66623
+&client_secret=wuN0sbYeIJ6sZ7k0lzihMu15CO0ZnUX7
 &grant_type=client_credentials
 
 ###
+POST http://latitude:8180/realms/hujanbadai/protocol/openid-connect/token HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+client_id=cdd-srv
+&client_secret=VqPXhbDQAFTJjOtD26pGyvBUsQL4FD2T
+&grant_type=client_credentials

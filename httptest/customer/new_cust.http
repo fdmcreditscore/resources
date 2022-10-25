@@ -15,3 +15,7 @@ content-type: application/json
 ###
 POST http://localhost:8900/mgmt/v1/customers?regid=3 HTTP/1.1
 content-type: application/json
+
+###
+POST http://localhost:8900/mgmt/v1/customers/test HTTP/1.1
+

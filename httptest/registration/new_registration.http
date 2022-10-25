@@ -2,10 +2,14 @@ POST http://localhost:8900/mgmt/v1/registrations HTTP/1.1
 content-type: application/json
 
 {
-  "organizationName": "P.T. Adimi Adima Joko",
-  "personName": "Gatot Sugiatmo",
-  "personPhone": "0831168500",
-  "personEmail": "me@fdmazhar.biz",
+  "organizationName": "Surya Adi Perdana",
+  "personName": "Adi Surya",
+  "businessPhone": "0834168500",
+  "personEmail": "fransmzh2368@365msoffice.live",
   "businessRegistrationNumber": "1408962234",
   "taxId": "2411638904"
 }
+
+###
+### confirmation
+GET http://localhost:8900/mgmt/v1/registrations/48/confirm?confirmcode=07fc8bcd-4d8d-4972-8f2d-b0c831c185ed HTTP/1.1
