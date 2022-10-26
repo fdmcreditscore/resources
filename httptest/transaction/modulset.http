@@ -1,0 +1,16 @@
+POST http://localhost:8900/mgmt/v1/modulset/ENSA22380 HTTP/1.1
+Content-Type: application/json
+
+{
+    "moduls": ["telco:jeniskartu","telco:tenure"]   
+}
+
+###
+POST http://localhost:8900/mgmt/v1/customers/ENSA22380/modulset HTTP/1.1
+Content-Type: application/json
+
+{
+    "moduls": ["telco:jeniskartu","telco:tenure","telco:aktivasi"]   
+}
+
+###
