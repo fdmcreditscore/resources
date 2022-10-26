@@ -14,6 +14,6 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:9020/telco/v1/api/modulset?clientid=AQ&msisdn=081112222&refid=20000&modulset=telco%3Aactive%20telco%3Ajeniskartu%20telco%3Apaketdata%20telco%3Abilling%20telco%3Asaldo%20telco%3Aaktivasi%20telco%3Aquotadata%20telco%3Atenure%20telco%3Aexpire HTTP/1.1
+GET http://latitude:9020/telco/v1/api/modulset?clientid=AQ&msisdn=081112222&refid=20000&modulset=telco%3Aactive%20telco%3Ajeniskartu%20telco%3Apaketdata%20telco%3Abilling%20telco%3Asaldo%20telco%3Aaktivasi%20telco%3Aquotadata%20telco%3Atenure%20telco%3Aexpire HTTP/1.1
 clientid: "ABCK"
 

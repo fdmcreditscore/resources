@@ -51,7 +51,7 @@ services:
         - docnet
 
     mockisat:
-      container_name: mock-isat
+      container_name: mockisat
       build: mock-isat
       image: fransmzh/cdd-mock-isat
       restart: "no"
@@ -83,9 +83,10 @@ services:
         - SPRING_JPA_HIBERNATE_DDL_AUTO=none
         - SPRING_BOOT_ADMIN_CLIENT_URL=http://discovery:8761/sbadmin
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery:8761/eureka/
-        - INDOSAT_URL_BASE=http://mockisat:9021/subscribers
+        - INDOSAT.URL.BASE=http://mockisat:9021/subscribers
         - INDOSAT_URL_ACCESSTOKEN=http://mockisat:9021/oauth2-client/accesstoken
         - KEYCLOAK_SERVER-URL=http://keycloak:8180
+        - EUREKA_INSTANCE_IP_ADDRESS=192.168.0.195
       expose:
         - '9020'
       ports:
