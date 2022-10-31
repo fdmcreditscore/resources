@@ -1,3 +1,4 @@
 discovery/*.jar
 mock-isat/*.jar
 telco-client/*.jar
+mgmt-server/*.jar
