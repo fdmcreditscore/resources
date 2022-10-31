@@ -26,7 +26,7 @@ services:
         - docnet
 
     keycloak:
-      container_name: cdd-keycloak
+      container_name: keycloak
       build: keycloak
       restart: "no"
       environment:
@@ -83,7 +83,8 @@ services:
         - SPRING_JPA_HIBERNATE_DDL_AUTO=none
         - SPRING_BOOT_ADMIN_CLIENT_URL=http://discovery:8761/sbadmin
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery:8761/eureka/
-        - KEYCLOAK_BASE-URL=http://keycloak
+        - KEYCLOAK_BASEURL=http://keycloak:8080
+        - SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_KEYCLOAK_ISSUER-URI=http://keycloak:8080/realms/gloryday
         - EUREKA_INSTANCE_IP_ADDRESS=192.168.0.195
       expose:
         - '9000'
@@ -110,7 +111,6 @@ services:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery:8761/eureka/
         - INDOSAT.URL.BASE=http://mockisat:9021/subscribers
         - INDOSAT_URL_ACCESSTOKEN=http://mockisat:9021/oauth2-client/accesstoken
-        - KEYCLOAK_SERVER-URL=http://keycloak:8180
         - EUREKA_INSTANCE_IP_ADDRESS=192.168.0.195
       expose:
         - '9020'

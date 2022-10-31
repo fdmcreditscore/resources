@@ -1,0 +1,5 @@
+### create user admin
+### create client internal-access
+### create client react-login
+
+POST http://latitude:8180/realms/gloryday/
