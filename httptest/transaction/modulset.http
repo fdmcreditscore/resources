@@ -1,16 +1,21 @@
-POST http://localhost:8900/mgmt/v1/modulset/ENSA22380 HTTP/1.1
+POST http://localhost:8900/mgmt/v1/customers/AQ82290/modulset HTTP/1.1
 Content-Type: application/json
 
 {
-    "moduls": ["telco:jeniskartu","telco:tenure"]   
+    "modulNames": ["telco:aktivasi","telco:active"]   
 }
 
 ###
-POST http://localhost:8900/mgmt/v1/customers/ENSA22380/modulset HTTP/1.1
+GET  http://localhost:8900/mgmt/v1/customers/AQ82290/modulset HTTP/1.1
+
+###
+PUT http://localhost:8900/mgmt/v1/modulset HTTP/1.1
 Content-Type: application/json
 
 {
-    "moduls": ["telco:jeniskartu","telco:tenure","telco:aktivasi"]   
+    "modulsetCode": "8206898c-c025-4173-9548-c3a4745f8d8ea",
+    "modulNames": ["telco:tenure", ,"telco:expire" ]
 }
 
 ###
+
