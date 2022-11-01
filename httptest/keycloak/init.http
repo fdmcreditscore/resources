@@ -1,5 +1,70 @@
-### create user admin
+### get token dari realm master
+POST http://latitude:8180/realms/master/protocol/openid-connect/token HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+client_id=admin-cli
+&username=admin
+&password=admin
+&grant_type=password
+
+### create user admin di gloryday
+POST http://latitude:8180/admin/realms/gloryday/users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4ZXF5VVB2T3RvT0R5ODdycTNkMURMeXFSQUJPMFFrYnFkZVhGNUdYUjFzIn0.eyJleHAiOjE2NjcyMjQ4NjQsImlhdCI6MTY2NzIyNDUwNCwianRpIjoiMmVjZjAyNGEtMzA5OS00Zjg2LWExNGMtN2RhMDEyZmUxMmM3IiwiaXNzIjoiaHR0cDovL2xhdGl0dWRlOjgxODAvcmVhbG1zL21hc3RlciIsInN1YiI6IjJiMmE3OTMxLThmNjctNDY5Mi04ZDY4LTQ5ZmNkM2YwMjIwYiIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiI4NDQ2ZDZkYi00N2EyLTQzOTItYTBhYS1jMGRlOTQ4MWJkMzciLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiODQ0NmQ2ZGItNDdhMi00MzkyLWEwYWEtYzBkZTk0ODFiZDM3IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiJ9.XYgvnWAnmFDCsaFq_py5Iv5ob5BoxWYULC4ASAyThID23tBInatTj4szEULvp8d7DQetdFfBEX715RS6iZ3pZGMuGS3V7BAwiujS6a4R68I38TIifnp6KWkpyfOIbpZxQn-Xc10jbHpEZmS1XNutUMW3k2_W5dCmjnog_Bdom1Z6BnLBpNQ9Dy5RYuu5hzls0QrDB6Lk5XOvjj9j7-CQfcWv8jMQ_GxFsQmUJWW31eHANiZivZoEZiqBWlYY76IyHU8lFqwP8d2-ih4O8H-8BqtL9A3yYgS4N4Flmtx6eNaxxgFoA8hS938XX7onfmCBXcsRkKbA9XxE7xrnwFhrKg
+
+{
+    "username":"admin2",
+    "enabled":true,
+    "firstName":"admin gloryday",
+    "emailVerified":true,
+    "credentials":[
+        {
+            "value":"admin"
+        }
+    ]
+}
+
+###
+
+POST http://latitude:8180/admin/realms/gloryday/users/2dd3d8c9-8a91-4296-bf4f-22199f72f2df/role-mappings/clients/3fecd062-5702-4372-a376-2c20ec0db0a4
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4ZXF5VVB2T3RvT0R5ODdycTNkMURMeXFSQUJPMFFrYnFkZVhGNUdYUjFzIn0.eyJleHAiOjE2NjcyMjU0MDQsImlhdCI6MTY2NzIyNTA0NCwianRpIjoiODYzYjNlNTgtNDhhZC00NzNjLWEzOTAtMWMyYzYwZTljZWE3IiwiaXNzIjoiaHR0cDovL2xhdGl0dWRlOjgxODAvcmVhbG1zL21hc3RlciIsInN1YiI6IjJiMmE3OTMxLThmNjctNDY5Mi04ZDY4LTQ5ZmNkM2YwMjIwYiIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiIxOTI1ZTZiZC05YjcwLTRkNGItYjk2My01MmM0YTM1MGE4MTciLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiMTkyNWU2YmQtOWI3MC00ZDRiLWI5NjMtNTJjNGEzNTBhODE3IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiJ9.iuPGRvOoKzW2xiFCAi1vRZugTYIRO5-xEKiVRCkUrwNPhatIKJjqmci0p3M_qgQ1pNbxot8Tkmodd5CKr1kkIjEmKHJqTM0JzI_S9c_GtcrXNgyy0mSm7Oo7MReSSR5spNOFwJtcdkZP0m2njwOmcmhjXUHkT68jK_IZbdp0-En88ZbPhRyEuzSRJgsJ5JdAq-OwTqWhLWcRSp8R2YhSwLGD_zTmCUa8tGEjCMBFK6nNafCuZjyuXfdv7A06iaZLoOIeEDTii_wSfjdk4S_0t5owX3MCwpQ6K6RjIafoUgoRwAhlhruVHeiHXiWvfxBIqoeIruQQm5WHp83EbnQIjA
+
+[
+  {
+    "id": "737e2d32-f435-4809-9107-02062f291842",
+    "name": "manage-clients"  
+  }
+]
+
+###
+POST http://latitude:8180/admin/realms/gloryday/users/2dd3d8c9-8a91-4296-bf4f-22199f72f2df/role-mappings/clients/3fecd062-5702-4372-a376-2c20ec0db0a4
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4ZXF5VVB2T3RvT0R5ODdycTNkMURMeXFSQUJPMFFrYnFkZVhGNUdYUjFzIn0.eyJleHAiOjE2NjcyMjU0MDQsImlhdCI6MTY2NzIyNTA0NCwianRpIjoiODYzYjNlNTgtNDhhZC00NzNjLWEzOTAtMWMyYzYwZTljZWE3IiwiaXNzIjoiaHR0cDovL2xhdGl0dWRlOjgxODAvcmVhbG1zL21hc3RlciIsInN1YiI6IjJiMmE3OTMxLThmNjctNDY5Mi04ZDY4LTQ5ZmNkM2YwMjIwYiIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiIxOTI1ZTZiZC05YjcwLTRkNGItYjk2My01MmM0YTM1MGE4MTciLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiMTkyNWU2YmQtOWI3MC00ZDRiLWI5NjMtNTJjNGEzNTBhODE3IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiJ9.iuPGRvOoKzW2xiFCAi1vRZugTYIRO5-xEKiVRCkUrwNPhatIKJjqmci0p3M_qgQ1pNbxot8Tkmodd5CKr1kkIjEmKHJqTM0JzI_S9c_GtcrXNgyy0mSm7Oo7MReSSR5spNOFwJtcdkZP0m2njwOmcmhjXUHkT68jK_IZbdp0-En88ZbPhRyEuzSRJgsJ5JdAq-OwTqWhLWcRSp8R2YhSwLGD_zTmCUa8tGEjCMBFK6nNafCuZjyuXfdv7A06iaZLoOIeEDTii_wSfjdk4S_0t5owX3MCwpQ6K6RjIafoUgoRwAhlhruVHeiHXiWvfxBIqoeIruQQm5WHp83EbnQIjA
+
+[
+  {
+    "id": "1b9f34ee-0fba-4886-97c2-d837d6ee6da6",
+    "name": "query-clients"  
+  },
+  {
+    "id": "737e2d32-f435-4809-9107-02062f291842",
+    "name": "manage-clients"
+  },
+  {
+    "id": "26664d44-d47f-4d51-b09c-195dd3fba983",
+    "name": "create-client"
+  },
+  {
+    "id": "7cb2945c-78ca-4e64-8307-b861723a2da6",
+    "name": "query-users"
+  },
+]
+
 ### create client internal-access
 ### create client react-login
 
+
+
+###
 POST http://latitude:8180/realms/gloryday/

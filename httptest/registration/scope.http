@@ -1,0 +1,42 @@
+POST http://latitude:8180/admin/realms/gloryday/client-scopes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJiWW5oTk5yRF9DM25qc0YzYThtckdkb3RoN1N5YWVxa2h1UHF3akppbWVVIn0.eyJleHAiOjE2NjcyNzIyOTIsImlhdCI6MTY2NzI3MTY5MiwianRpIjoiOWJhNDFlMWEtNzM4OS00YTEyLWFmYjMtNDcxM2YyZDMyNTI4IiwiaXNzIjoiaHR0cDovL2xhdGl0dWRlOjgxODAvcmVhbG1zL2dsb3J5ZGF5Iiwic3ViIjoiNTdiMWEyOTUtOTQxNS00YTk0LTliOTEtYzViMWZmMDgxM2RiIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6Ijk4YzFiNTI4LWM1ZGQtNGIyMy1hNjljLTA0YTFhMTRlMGUxMyIsImFjciI6IjEiLCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJzaWQiOiI5OGMxYjUyOC1jNWRkLTRiMjMtYTY5Yy0wNGExYTE0ZTBlMTMiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6ImFkbWluIGdsb3J5ZGF5IiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4iLCJnaXZlbl9uYW1lIjoiYWRtaW4gZ2xvcnlkYXkifQ.NkpuGgGoHC662Qk3k7bW4SVv3Hx3RLuzou2zdPBq60jLeWBf8VqSjRnOswjGx1h5CmQ1Km6DRxGM932xYRvegD80QVceRgFZ8OyTlXPTVgYWiCZZSGNapsqkiQspdgHpjqWpevIa3C2Cv9UBlrDOUJz-RZw8clX0BycAOqSuLZQix_HLTpamoxakls8qKB34xIF51oXd02Cdym3Bgx-diThgowRsz_k1Bu4ASRqMB8rCfJRv7bTDQPMuauAHEUrq4e-Mz94nR3fTSSkvv_cKr4qFSncvs2Y-yBXWOqhcKsYIH9zXfg0hXEC0NoQYYKZzQ6ANbieLf-nTkxv0SWpC7w
+
+{
+    "name": "Scope68",
+    "id": "scope68",
+    "protocol": "openid-connect",
+    "attributes": {
+        "include.in.token.scope": "false",
+        "display.on.consent.screen": "false"
+    },
+    "protocolMappers": [
+        {
+            "name": "Scope55",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-audience-mapper",
+            "consentRequired": false,
+            "config": {
+                "id.token.claim": "false",
+                "access.token.claim": "true",
+                "included.custom.audience": "Scope68"
+            }
+        }
+    ]
+}
+
+###
+### Get list of scopes
+GET http://latitude:8180/admin/realms/gloryday/client-scopes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJiWW5oTk5yRF9DM25qc0YzYThtckdkb3RoN1N5YWVxa2h1UHF3akppbWVVIn0.eyJleHAiOjE2NjcyNjkyNTEsImlhdCI6MTY2NzI2ODY1MSwianRpIjoiYzgxYWYxMDUtZTFlYS00YWUxLWEwMTQtMzljNDIwZGQ4NTk0IiwiaXNzIjoiaHR0cDovL2xhdGl0dWRlOjgxODAvcmVhbG1zL2dsb3J5ZGF5Iiwic3ViIjoiNTdiMWEyOTUtOTQxNS00YTk0LTliOTEtYzViMWZmMDgxM2RiIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjI2OTkwNGYxLTkyMTEtNGEyMS04NGIwLTc0Y2MzYTZkYjNlYiIsImFjciI6IjEiLCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJzaWQiOiIyNjk5MDRmMS05MjExLTRhMjEtODRiMC03NGNjM2E2ZGIzZWIiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6ImFkbWluIGdsb3J5ZGF5IiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4iLCJnaXZlbl9uYW1lIjoiYWRtaW4gZ2xvcnlkYXkifQ.sFeOfo55R39GtYO-yKXLc1R6M3fqJKYmyQhij4eEreQ4kiDRRIKpbnaAXTna5MDS5-uWZs63gLAFohfggQYNOSJR_CR2nMY85twM_MtAOQhDtlDLwmt1djsvDm_AZjYGd7ts7xxeX16unLj-dGWybecDKXPJFYGGK1gp2zzXcLXZD9YZ30O8WBWbSwgHfCNSnAiM4jhpEwUiLkFIc_hHWNfWuGTqDUSVSC9Ig2jtPnB5RUWoJst5hHHwG4RTXSMXLaSSmK05YQQimaLQNzluLFsq750MPpX3Y9Kxw4eVoDy0SVt_--kuBaLmtQUm4aAf_C2tmNLWrntJ9Q7hGrStwA
+
+###
+### Assign scope to client
+PUT http://latitude:8180/admin/realms/gloryday/clients/... HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNajhHby1RZS1rOGRQSURmelRURzVRQ1NlcnJYRHl2NWNqcjVKTXQ0SHlVIn0.eyJleHAiOjE2NjcxOTgyNjYsImlhdCI6MTY2NzE5Nzk2NiwianRpIjoiODM2NDBlNjgtZmI1ZS00OGNlLTlkODItODY5M2NiNTYzMjM3IiwiaXNzIjoiaHR0cDovL2xhdGl0dWRlOjgxODAvcmVhbG1zL2dsb3J5ZGF5Iiwic3ViIjoiZjY2YTEzM2MtYTM0Zi00NDEwLWI1NmItNTFlYzRkYzdiZWQ4IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjU1NTgyMWYzLTA4M2EtNDU5Ny1hOTMxLWRlZWRkMDY4MGQ0MyIsImFjciI6IjEiLCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJzaWQiOiI1NTU4MjFmMy0wODNhLTQ1OTctYTkzMS1kZWVkZDA2ODBkNDMiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.XMq0TpLLAwkGqDF3r9GYNAujqge_vlBRkw-eDQWcaAgJsJ-l7nCWKI37q_KX4kR4FLD0MZt_2RBDX0JiGzl-FU4PaVp-itN6ECZufFb0zn7b8AZKgDuxVKbMDP9vqrQ-ek7HoTwRD7_dkElsrZhM7Qp5d8nXlQviz56uSn6AfyD8ytGQSPBpeuiIM2_WbrCuPU1ASltTciUqrufx20F-Przt53GJwe_w5FzmeZleA69lYAVqWQ-FKlkKSZjg18NHnT9yFWJL3kPSKTTC2hYOIXbe-ed3PjpIigfE-uSdiZ9BFPPHGwbyj-6LLRnExP8dhIh4A_kKmATzhvoFbRZY3Q
+
+{
+    "defaultClientScopes":["cdd.api.r","abcde1244"]
+}

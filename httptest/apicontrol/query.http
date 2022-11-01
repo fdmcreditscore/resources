@@ -1,5 +1,0 @@
-GET http://localhost:9030/middlewr/v1/api/bundle/8206898c-c025-4173-9548-c3a4745f88ea?msisdn=081112222&refid=0249 HTTP/1.1
-
-###
-
-GET http://localhost:9030/middlewr/v1/api/telco/active?msisdn=081112222&refid=0249 HTTP/1.1

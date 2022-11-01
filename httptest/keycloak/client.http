@@ -1,0 +1,13 @@
+POST http://latitude:8180/admin/realms/gloryday/clients HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNajhHby1RZS1rOGRQSURmelRURzVRQ1NlcnJYRHl2NWNqcjVKTXQ0SHlVIn0.eyJleHAiOjE2NjcxOTgyNjYsImlhdCI6MTY2NzE5Nzk2NiwianRpIjoiODM2NDBlNjgtZmI1ZS00OGNlLTlkODItODY5M2NiNTYzMjM3IiwiaXNzIjoiaHR0cDovL2xhdGl0dWRlOjgxODAvcmVhbG1zL2dsb3J5ZGF5Iiwic3ViIjoiZjY2YTEzM2MtYTM0Zi00NDEwLWI1NmItNTFlYzRkYzdiZWQ4IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjU1NTgyMWYzLTA4M2EtNDU5Ny1hOTMxLWRlZWRkMDY4MGQ0MyIsImFjciI6IjEiLCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJzaWQiOiI1NTU4MjFmMy0wODNhLTQ1OTctYTkzMS1kZWVkZDA2ODBkNDMiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.XMq0TpLLAwkGqDF3r9GYNAujqge_vlBRkw-eDQWcaAgJsJ-l7nCWKI37q_KX4kR4FLD0MZt_2RBDX0JiGzl-FU4PaVp-itN6ECZufFb0zn7b8AZKgDuxVKbMDP9vqrQ-ek7HoTwRD7_dkElsrZhM7Qp5d8nXlQviz56uSn6AfyD8ytGQSPBpeuiIM2_WbrCuPU1ASltTciUqrufx20F-Przt53GJwe_w5FzmeZleA69lYAVqWQ-FKlkKSZjg18NHnT9yFWJL3kPSKTTC2hYOIXbe-ed3PjpIigfE-uSdiZ9BFPPHGwbyj-6LLRnExP8dhIh4A_kKmATzhvoFbRZY3Q
+
+{
+    "clientId":"SUAD40090",
+    "name":"Surya Adi Perdana",
+    "description":"Surya Adi Perdana",
+    "enabled":true,
+    "serviceAccountsEnabled":true,
+    "standardFlowEnabled":false,
+    "defaultClientScopes":["cdd.api.r"]
+}
