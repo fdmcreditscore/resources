@@ -2,7 +2,7 @@ POST http://latitude:8180/realms/gloryday/protocol/openid-connect/token HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 client_id=SUAD05706
-&client_secret=42yZsDO47VnLnEHFrk9YrxT7Sez6dB7R
+&client_secret=oZdfgliy1XIG5VfmzEGINkzMB1AsQRKc
 &grant_type=client_credentials
 
 ###

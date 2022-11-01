@@ -29,6 +29,7 @@ services:
       container_name: keycloak
       build: keycloak
       restart: "no"
+      hostname: keycloak
       environment:
         - KEYCLOAK_ADMIN=admin
         - KEYCLOAK_ADMIN_PASSWORD=admin
@@ -83,11 +84,9 @@ services:
         - SPRING_JPA_HIBERNATE_DDL_AUTO=none
         - SPRING_BOOT_ADMIN_CLIENT_URL=http://discovery:8761/sbadmin
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery:8761/eureka/
+        - EUREKA_INSTANCE_IP_ADDRESS=192.168.0.195
         - KEYCLOAK_BASEURL=http://keycloak:8080
         - SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_KEYCLOAK_ISSUER-URI=http://keycloak:8080/realms/gloryday
-        - EUREKA_INSTANCE_IP_ADDRESS=192.168.0.195
-      expose:
-        - '9000'
       ports:
         - 9000:9000
       depends_on:
@@ -120,6 +119,33 @@ services:
         - cdddb
         - discovery
         - mockisat
+      networks:
+        - docnet
+
+    middleware:
+      container_name: middleware
+      build: middleware
+      image: fransmzh/cdd-middleware
+      restart: "no"
+      environment:
+        - SPRING_DATASOURCE_URL=jdbc:postgresql://cdddb:5432/cdd-db 
+        - SPRING.DATASOURCE.USERNAME=cdd 
+        - SPRING.DATASOURCE.PASSWORD=cdd 
+        - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+        - SPRING_BOOT_ADMIN_CLIENT_URL=http://discovery:8761/sbadmin
+        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery:8761/eureka/
+        - EUREKA_INSTANCE_IP_ADDRESS=192.168.0.195
+        - APP_TELCO_URL=http://telco-client/telco
+        - SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER-URI=http://keycloak:8080/realms/gloryday
+      expose:
+        - '9030'
+      ports:
+        - 9030:9030
+      depends_on:
+        - cdddb
+        - discovery
+        - telco-client
+        - keycloak
       networks:
         - docnet
 
