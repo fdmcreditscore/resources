@@ -1,4 +1,4 @@
--- DROP TABLE public.mock_subscriber;
+DROP TABLE IF EXISTS public.mock_subscriber;
 CREATE TABLE public.mock_subscriber (
 	msisdn varchar(255) NOT NULL,
 	activation_date date NULL,
@@ -25,6 +25,8 @@ VALUES
  ('081112227','2022-03-10',20000.00,0.00,'20','Prepaid',30000.00,15,4,'Y','Active'),
  ('081112228','2022-04-07',150000.00,0.00,'20','Prepaid',30000.00,15,4,'Y','NotActive'),
  ('081112229','2019-05-05',0.00,0.00,'20','Prepaid',30000.00,15,4,'Y','Suspended');
+
+DROP TABLE IF EXISTS public.mock_partner;
 
 CREATE TABLE public.mock_partner (
 	partner_id varchar(255) NOT NULL,

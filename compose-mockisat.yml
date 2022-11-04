@@ -1,0 +1,64 @@
+version: '3.4'
+name: cdd
+
+services:
+
+
+    cdddb:
+      container_name: appdb
+      build: cdddb
+      image: cdd-appdb
+      restart: "no"
+      environment:
+        - POSTGRES_USER=cdd
+        - POSTGRES_PASSWORD=cdd
+        - POSTGRES_DB=appdb
+        - TZ=Asia/Jakarta
+      logging:
+        options:
+          max-size: 10m
+          max-file: "3"
+      ports:
+        - '5435:5432'
+      volumes: 
+        - isatdb:/var/lib/postgresql/data
+      networks: 
+        - mocknet
+
+    discovery:
+      container_name: service-discovery
+      build: discovery
+      restart: "no"
+      expose: 
+        - '8761'
+      ports:
+        - 8761:8761
+      networks:
+        - docnet
+
+    mockisat:
+      container_name: mockisat
+      build: mock-isat
+      image: fransmzh/cdd-mock-isat
+      restart: "no"
+      environment:
+        - SPRING_DATASOURCE_URL=jdbc:postgresql://appdb:5432/appdb 
+        - SPRING.DATASOURCE.USERNAME=cdd 
+        - SPRING.DATASOURCE.PASSWORD=cdd 
+        - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+        - SPRING_BOOT_ADMIN_CLIENT_URL=http://discovery:8761/sbadmin
+      expose:
+        - '9021'
+      ports:
+        - 9021:9021
+      depends_on:
+        - cdddb
+        - discovery
+      networks:
+        - mocknet
+
+volumes:
+  isatdb: {}
+
+networks: 
+  mocknet: {}
