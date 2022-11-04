@@ -1,12 +1,11 @@
 version: '3.4'
-name: cdd
 
 services:
 
     keycloakdb:
       container_name: keycloakdb
       build: keycloakdb
-      image: cdd-keycloakdb
+      image: fransmzh/cdd-keycloakdb
       restart: "no"
       environment:
         - POSTGRES_USER=keycloak
@@ -29,19 +28,20 @@ services:
     keycloak:
       container_name: keycloak
       build: keycloak
+      image: fransmzh/cdd-keycloak
       restart: "no"
       environment:
-        - KEYCLOAK_ADMIN=admin
-        - KEYCLOAK_ADMIN_PASSWORD=admin
-        - KC_VENDOR=postgres
+        - KC_DB=postgres
         - KC_DB_URL=jdbc:postgresql://keycloakdb:5432/keycloakdb
         - KC_DB_USERNAME=keycloak
         - KC_DB_PASSWORD=keycloak
+        # - KEYCLOAK_FRONTEND_URL=htpp://keycloak:8080
         # - KEYCLOAK_HTTP_PORT=8080
         # - HOSTNAME-URL=http://latitude:8180
       ports:
         - 127.0.0.1:8180:8080
-      entrypoint: /opt/keycloak/bin/kc.sh start-dev --hostname-url http://latitude:8180 --hostname-admin-url http://latitude:8180
+      # entrypoint: /opt/keycloak/bin/kc.sh start-dev --hostname-url http://latitude:8180 --hostname-admin-url http://latitude:8180 --import-realm
+      entrypoint: /opt/keycloak/bin/kc.sh start-dev --import-realm
       depends_on:
         - keycloakdb
       networks:
@@ -50,7 +50,7 @@ services:
     cdddb:
       container_name: appdb
       build: cdddb
-      image: cdd-appdb
+      image: fransmzh/cdd-appdb
       restart: "no"
       environment:
         - POSTGRES_USER=cdd
@@ -71,6 +71,7 @@ services:
     discovery:
       container_name: service-discovery
       build: discovery
+      image: fransmzh/cdd-discovery
       restart: "no"
       expose: 
         - '8761'
@@ -100,30 +101,6 @@ services:
       networks:
         - docnet
 
-    # mgmt-server:
-    #   container_name: mgmtserver
-    #   build: mgmt-server
-    #   image: fransmzh/cdd-mgmt-server
-    #   restart: "no"
-    #   environment:
-    #     - SPRING_DATASOURCE_URL=jdbc:postgresql://cdddb:5432/cdd-db 
-    #     - SPRING.DATASOURCE.USERNAME=cdd 
-    #     - SPRING.DATASOURCE.PASSWORD=cdd 
-    #     - SPRING_JPA_HIBERNATE_DDL_AUTO=none
-    #     - SPRING_BOOT_ADMIN_CLIENT_URL=http://discovery:8761/sbadmin
-    #     - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery:8761/eureka/
-    #     - EUREKA_INSTANCE_IP_ADDRESS=192.168.0.195
-    #     - KEYCLOAK_BASEURL=http://keycloak:8080
-    #     - SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_KEYCLOAK_ISSUER-URI=http://keycloak:8080/realms/gloryday
-    #   ports:
-    #     - 9000:9000
-    #   depends_on:
-    #     - cdddb
-    #     - discovery
-    #     - keycloak
-    #   networks:
-    #     - docnet
-        
     telco-client:
       container_name: telco-client
       build: telco-client
@@ -150,6 +127,32 @@ services:
       networks:
         - docnet
 
+    mgmt-server:
+      container_name: mgmtserver
+      build: mgmt-server
+      image: fransmzh/cdd-mgmt-server
+      restart: "no"
+      extra_hosts:
+        - "host.docker.internal:host-gateway"
+      environment:
+        - SPRING_DATASOURCE_URL=jdbc:postgresql://cdddb:5432/appdb 
+        - SPRING.DATASOURCE.USERNAME=cdd 
+        - SPRING.DATASOURCE.PASSWORD=cdd 
+        - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+        - SPRING_BOOT_ADMIN_CLIENT_URL=http://discovery:8761/sbadmin
+        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery:8761/eureka/
+        - EUREKA_INSTANCE_IP_ADDRESS=192.168.0.195
+        - KEYCLOAK_BASEURL=http://latitude:8080
+        - SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_KEYCLOAK_ISSUERURI=http://keycloak:8080/realms/hujanbadai
+      ports:
+        - 9000:9000
+      depends_on:
+        - cdddb
+        - discovery
+        - keycloak
+      networks:
+        - docnet
+        
     middleware:
       container_name: middleware
       build: middleware
@@ -164,7 +167,7 @@ services:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery:8761/eureka/
         - EUREKA_INSTANCE_IP_ADDRESS=192.168.0.195
         - APP_TELCO_URL=http://telco-client/telco
-        - SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER-URI=http://keycloak:8080/realms/gloryday
+        - SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUERURI=http://keycloak:8080/realms/hujanbadai
       expose:
         - '9030'
       ports:
