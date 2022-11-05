@@ -125,19 +125,19 @@ CREATE TABLE public.transaction_record (
 
 DELETE FROM public.modul_price;
 INSERT INTO public.modul_price (module_name,endpoint,price) VALUES
-	 ('telco:valid','http://latitude:9021/subscribers/valid',4000),
-	 ('telco:active','http://latitude:9021/subscribers/active',4000),
-	 ('telco:jeniskartu','http://latitude:9021/subscribers/prepaid',4000),
-	 ('telco:billing','http://latitude:9021/subscribers/billing',4000),
-	 ('telco:paketdata','http://latitude:9021/subscribers/data',4000),
-	 ('telco:saldo','http://latitude:9021/subscribers/balance',4000),
-	 ('telco:quotadata','http://latitude:9021/subscribers/quota',4000),
-	 ('telco:tenure','http://latitude:9021/subscribers/tenure',4000),
-	 ('telco:expire','http://latitude:9021/subscribers/expiration',4000),
-	 ('telco:dataexpire','http://latitude:9021/subscribers/data/expiration',4000);
+	 ('telco:valid','http://mockisat:9021/subscribers/valid',4000),
+	 ('telco:active','http://mockisat:9021/subscribers/active',4000),
+	 ('telco:jeniskartu','http://mockisat:9021/subscribers/prepaid',4000),
+	 ('telco:billing','http://mockisat:9021/subscribers/billing',4000),
+	 ('telco:paketdata','http://mockisat:9021/subscribers/data',4000),
+	 ('telco:saldo','http://mockisat:9021/subscribers/balance',4000),
+	 ('telco:quotadata','http://mockisat:9021/subscribers/quota',4000),
+	 ('telco:tenure','http://mockisat:9021/subscribers/tenure',4000),
+	 ('telco:expire','http://mockisat:9021/subscribers/expiration',4000),
+	 ('telco:dataexpire','http://mockisat:9021/subscribers/data/expiration',4000);
 INSERT INTO public.modul_price (module_name,endpoint,price) VALUES
-	 ('telco:aktivasi','http://latitude:9021/subscribers/activation',4000),
-	 ('identity:matchface','http://latitude:9022/identify/matchface',10000);
+	 ('telco:aktivasi','http://mockisat:9021/subscribers/activation',4000),
+	 ('identity:matchface','http://mockisat:9022/identify/matchface',10000);
 
 
 CREATE SEQUENCE public.hibernate_sequence

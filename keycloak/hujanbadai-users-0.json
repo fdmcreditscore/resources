@@ -1,0 +1,29 @@
+{
+  "realm" : "hujanbadai",
+  "users" : [ {
+    "id" : "9c0ed288-9e0f-4e15-aaa8-e62231b76ba8",
+    "createdTimestamp" : 1667648151889,
+    "username" : "admin",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : true,
+    "firstName" : "admin",
+    "lastName" : "",
+    "credentials" : [ {
+      "id" : "0a0e5984-fbdd-4301-bb22-172c665d7573",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1667648162872,
+      "secretData" : "{\"value\":\"RZzy9+88xyWL6eSxrXVmyHdFBBH984he9Xqi3k4GLHwc5qYi8E/47m7sq2ShL/nqUGQOAbqsL7dMWrc9oUWkuA==\",\"salt\":\"uDq7h5KIXwKQRxetdQwUgw==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-hujanbadai" ],
+    "clientRoles" : {
+      "realm-management" : [ "create-client", "query-clients", "view-users", "view-clients", "query-users", "manage-clients", "manage-users" ]
+    },
+    "notBefore" : 0,
+    "groups" : [ ]
+  } ]
+}
