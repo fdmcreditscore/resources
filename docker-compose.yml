@@ -112,7 +112,7 @@ services:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery:8761/eureka/
         - INDOSAT.URL.BASE=http://mockisat:9021/subscribers
         - INDOSAT_URL_ACCESSTOKEN=http://mockisat:9021/oauth2-client/accesstoken
-        - EUREKA_INSTANCE_IP_ADDRESS=192.168.0.195
+        # - EUREKA_INSTANCE_IP_ADDRESS=192.168.0.195
       expose:
         - '9020'
       ports:
