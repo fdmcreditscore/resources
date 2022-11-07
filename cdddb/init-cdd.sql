@@ -95,9 +95,6 @@ CREATE TABLE public.registration (
 	tax_id varchar(255) NULL,
 	CONSTRAINT registration_pkey PRIMARY KEY (registration_id)
 );
-DELETE FROM public.registration;
-INSERT INTO public.registration (registration_id,business_number,confirmation_code,instansi,person_email,person_name,person_phone,registration_date,registration_status,tax_id) VALUES
-	 (1,'21040503','24daljkr42j','PT SURYA ABADI','fransmzh13@gmail.com','JOKO SUSANTO','081114455','2022-11-02','Emailed','4400-502003');
 
 DROP TABLE IF EXISTS public.topup_log;
 CREATE TABLE public.topup_log (
@@ -124,20 +121,22 @@ CREATE TABLE public.transaction_record (
 );
 
 DELETE FROM public.modul_price;
-INSERT INTO public.modul_price (module_name,endpoint,price) VALUES
-	 ('telco:valid','http://mockisat:9021/subscribers/valid',4000),
-	 ('telco:active','http://mockisat:9021/subscribers/active',4000),
-	 ('telco:jeniskartu','http://mockisat:9021/subscribers/prepaid',4000),
-	 ('telco:billing','http://mockisat:9021/subscribers/billing',4000),
-	 ('telco:paketdata','http://mockisat:9021/subscribers/data',4000),
-	 ('telco:saldo','http://mockisat:9021/subscribers/balance',4000),
-	 ('telco:quotadata','http://mockisat:9021/subscribers/quota',4000),
-	 ('telco:tenure','http://mockisat:9021/subscribers/tenure',4000),
-	 ('telco:expire','http://mockisat:9021/subscribers/expiration',4000),
-	 ('telco:dataexpire','http://mockisat:9021/subscribers/data/expiration',4000);
-INSERT INTO public.modul_price (module_name,endpoint,price) VALUES
-	 ('telco:aktivasi','http://mockisat:9021/subscribers/activation',4000),
-	 ('identity:matchface','http://mockisat:9022/identify/matchface',10000);
+INSERT INTO public.modul_price (module_name,endpoint,price) VALUES ('telco:valid','http://mockisat:9021/subscribers/valid',4000);
+INSERT INTO public.modul_price (module_name,endpoint,price) VALUES ('telco:active','http://mockisat:9021/subscribers/active',4000);
+INSERT INTO public.modul_price (module_name,endpoint,price) VALUES ('telco:jeniskartu','http://mockisat:9021/subscribers/prepaid',4000);
+INSERT INTO public.modul_price (module_name,endpoint,price) VALUES ('telco:billing','http://mockisat:9021/subscribers/billing',4000);
+INSERT INTO public.modul_price (module_name,endpoint,price) VALUES ('telco:paketdata','http://mockisat:9021/subscribers/data',4000);
+INSERT INTO public.modul_price (module_name,endpoint,price) VALUES ('telco:saldo','http://mockisat:9021/subscribers/balance',4000);
+INSERT INTO public.modul_price (module_name,endpoint,price) VALUES ('telco:quotadata','http://mockisat:9021/subscribers/quota',4000);
+INSERT INTO public.modul_price (module_name,endpoint,price) VALUES ('telco:tenure','http://mockisat:9021/subscribers/tenure',4000);
+INSERT INTO public.modul_price (module_name,endpoint,price) VALUES ('telco:expire','http://mockisat:9021/subscribers/expiration',4000);
+INSERT INTO public.modul_price (module_name,endpoint,price) VALUES ('telco:dataexpire','http://mockisat:9021/subscribers/data/expiration',4000);
+INSERT INTO public.modul_price (module_name,endpoint,price) VALUES ('telco:aktivasi','http://mockisat:9021/subscribers/activation',4000);
+INSERT INTO public.modul_price (module_name,endpoint,price) VALUES ('identity:matchface','http://mockisat:9022/identify/matchface',10000);
+
+DELETE FROM public.registration;
+INSERT INTO public.registration (registration_id,business_number,confirmation_code,instansi,person_email,person_name,person_phone,registration_date,registration_status,tax_id) VALUES
+	 (1,'21040503','24daljkr42j','PT SURYA ABADI','fransmzh13@gmail.com','JOKO SUSANTO','081114455','2022-11-02','Emailed','4400-502003');
 
 
 CREATE SEQUENCE public.hibernate_sequence
