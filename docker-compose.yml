@@ -88,13 +88,14 @@ services:
         - SPRING.DATASOURCE.USERNAME=cdd 
         - SPRING.DATASOURCE.PASSWORD=cdd 
         - SPRING_JPA_HIBERNATE_DDL_AUTO=none
-        - SPRING_BOOT_ADMIN_CLIENT_URL=http://latitude:8761/sbadmin
+        - SPRING_BOOT_ADMIN_CLIENT_URL=http://cdd-cloud:8761/sbadmin
       expose:
         - '9021'
       ports:
         - 9021:9021
       extra_hosts:
         - 'latitude:192.168.0.195'
+        - 'cdd-cloud:172.16.0.100'
       depends_on:
         - cdddb
         - discovery
@@ -110,11 +111,11 @@ services:
         - SPRING.DATASOURCE.USERNAME=cdd 
         - SPRING.DATASOURCE.PASSWORD=cdd 
         - SPRING_JPA_HIBERNATE_DDL_AUTO=none
-        - SPRING_BOOT_ADMIN_CLIENT_URL=http://latitude:8761/sbadmin
-        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://latitude:8761/eureka/
-        - INDOSAT.URL.BASE=http://mockisat:9021/subscribers
-        - INDOSAT_URL_ACCESSTOKEN=http://mockisat:9021/oauth2-client/accesstoken
-        - EUREKA_INSTANCE_IP_ADDRESS=192.168.0.195
+        - SPRING_BOOT_ADMIN_CLIENT_URL=http://cdd-cloud:8761/sbadmin
+        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://cdd-cloud:8761/eureka/
+        - INDOSAT.URL.BASE=https://apidev.ioh.co.id/subscribers
+        - INDOSAT_URL_ACCESSTOKEN=http://apidev.ioh.co.id/oauth2-client/accesstoken
+        - EUREKA_INSTANCE_IP_ADDRESS=172.16.0.100
       expose:
         - '9020'
       ports:
@@ -125,7 +126,6 @@ services:
       depends_on:
         - cdddb
         - discovery
-        - mockisat
       networks:
         - docnet
 
@@ -137,11 +137,11 @@ services:
         - SPRING_DATASOURCE_URL=jdbc:postgresql://cdddb:5432/appdb 
         - SPRING.DATASOURCE.USERNAME=cdd 
         - SPRING.DATASOURCE.PASSWORD=cdd 
-        - SPRING_BOOT_ADMIN_CLIENT_URL=http://latitude:8761/sbadmin
-        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://latitude:8761/eureka/
+        - SPRING_BOOT_ADMIN_CLIENT_URL=http://cdd-cloud:8761/sbadmin
+        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://cdd-cloud:8761/eureka/
         - KEYCLOAK_BASEURL=http://keycloak:8080
         - SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_KEYCLOAK_ISSUERURI=http://keycloak:8080/realms/hujanbadai
-        - EUREKA_INSTANCE_IP_ADDRESS=192.168.0.195
+        - EUREKA_INSTANCE_IP_ADDRESS=172.16.0.100
       ports:
         - 9000:9000
       extra_hosts:
@@ -163,9 +163,9 @@ services:
         - SPRING_DATASOURCE_URL=jdbc:postgresql://cdddb:5432/appdb 
         - SPRING.DATASOURCE.USERNAME=cdd 
         - SPRING.DATASOURCE.PASSWORD=cdd 
-        - SPRING_BOOT_ADMIN_CLIENT_URL=http://latitude:8761/sbadmin
-        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://latitude:8761/eureka/
-        - EUREKA_INSTANCE_IP_ADDRESS=192.168.0.195
+        - SPRING_BOOT_ADMIN_CLIENT_URL=http://cdd-cloud:8761/sbadmin
+        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://cdd-cloud:8761/eureka/
+        - EUREKA_INSTANCE_IP_ADDRESS=172.16.0.100
         - APP_TELCO_URL=http://telco-client/telco
         - SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUERURI=http://keycloak:8080/realms/hujanbadai
       expose:
