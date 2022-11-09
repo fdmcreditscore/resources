@@ -115,6 +115,9 @@ services:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://cdd-cloud:8761/eureka/
         - INDOSAT.URL.BASE=https://apidev.ioh.co.id/subscribers
         - INDOSAT_URL_ACCESSTOKEN=http://apidev.ioh.co.id/oauth2-client/accesstoken
+        - INDOSAT_PARTNERID=APITest
+        - INDOSAT_PARTNERKEY=8jUaZEmAngntuGtUr52X8GM3YGL9VbMsiEb4loGhf13dNRYc
+        - INDOSAT_PARTNERSECRET=nDbuPiFImB7dY9kuhB67OXKO3eGUHFXnkr81cWUj80sQNjit2tFNUUmtZQpyD143
         - EUREKA_INSTANCE_IP_ADDRESS=172.16.0.100
       expose:
         - '9020'
