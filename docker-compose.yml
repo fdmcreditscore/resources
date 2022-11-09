@@ -121,6 +121,7 @@ services:
         - 9020:9020
       extra_hosts:
         - 'latitude:192.168.0.195'
+        - 'cdd-cloud:172.16.0.100'
       depends_on:
         - cdddb
         - discovery
@@ -145,7 +146,8 @@ services:
         - 9000:9000
       extra_hosts:
         - 'latitude:192.168.0.195'
-        - "host.docker.internal:host-gateway"
+        - 'host.docker.internal:host-gateway'
+        - 'cdd-cloud:172.16.0.100'
       depends_on:
         - cdddb
         - discovery
@@ -172,6 +174,7 @@ services:
         - 9030:9030
       extra_hosts:
         - 'latitude:192.168.0.195'
+        - 'cdd-cloud:172.16.0.100'
       depends_on:
         - cdddb
         - discovery

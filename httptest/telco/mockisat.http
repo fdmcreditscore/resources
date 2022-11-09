@@ -1,0 +1,89 @@
+GET http://latitude:9020/telco/v1/api/active?msisdn=081112222&refid=2345642
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ2WXk1SURhenJVdUUzVmxfUTRMRVd5YWRHaTFITDF2UmxNSURVV1NSSHBJIn0.eyJleHAiOjE2NjY1MzM1MjIsImlhdCI6MTY2NjUzMzIyMiwianRpIjoiMDNjYmZjMWItMDhjMS00M2QwLTgwMjEtMGYyNTY1MTViN2FlIiwiaXNzIjoiaHR0cDovL2xhdGl0dWRlOjgxODAvcmVhbG1zL2h1amFuYmFkYWkiLCJzdWIiOiI4NDFhZTM3YS1lYWI4LTRlNDktOGY3NC03Zjg2YTYyMTJjYjQiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJBUTY2NjIzIiwic2NvcGUiOiJjZGQuYXBpLnIiLCJjbGllbnRJZCI6IkFRNjY2MjMiLCJjbGllbnRIb3N0IjoiMTkyLjE2OC4wLjE5OCIsImNsaWVudEFkZHJlc3MiOiIxOTIuMTY4LjAuMTk4In0.WmbpbHBfiY0jfTQ3JloWhi73uMn-CE2QlZYqTeK5tHQCk-ceVoSn2dHpkNlEEjhHgp9yVEbCeJN3MkwWuMS4BCA0K5ApVmRd77FlKyR1Td-PgFd7rYDmjuOOmO5wjHsecF2xnhbw4rmY28qIliGBLCXPOJrv6PC2j8sMXZdear5uAgrvMOAWRjAYAtGNKshIOj6uj10ti5hKCeSigozIvSIi1oAaWNw60LHb6sTwb_aFkxqhZxc5MiCnKHrVe_jqOGYZtkCiPai6dUQdqsh-RKKqzA2ZzLW3GBwBpYuPfEGUTybkpTiFSoUNYjrnrPdq9zrc_t0hqKqPXEW4XJlCPA
+
+###
+GET http://latitude:9020/telco/v1/api/aktivasi?msisdn=081112222&refid=2345642
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ2WXk1SURhenJVdUUzVmxfUTRMRVd5YWRHaTFITDF2UmxNSURVV1NSSHBJIn0.eyJleHAiOjE2NjY1MzM1MjIsImlhdCI6MTY2NjUzMzIyMiwianRpIjoiMDNjYmZjMWItMDhjMS00M2QwLTgwMjEtMGYyNTY1MTViN2FlIiwiaXNzIjoiaHR0cDovL2xhdGl0dWRlOjgxODAvcmVhbG1zL2h1amFuYmFkYWkiLCJzdWIiOiI4NDFhZTM3YS1lYWI4LTRlNDktOGY3NC03Zjg2YTYyMTJjYjQiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJBUTY2NjIzIiwic2NvcGUiOiJjZGQuYXBpLnIiLCJjbGllbnRJZCI6IkFRNjY2MjMiLCJjbGllbnRIb3N0IjoiMTkyLjE2OC4wLjE5OCIsImNsaWVudEFkZHJlc3MiOiIxOTIuMTY4LjAuMTk4In0.WmbpbHBfiY0jfTQ3JloWhi73uMn-CE2QlZYqTeK5tHQCk-ceVoSn2dHpkNlEEjhHgp9yVEbCeJN3MkwWuMS4BCA0K5ApVmRd77FlKyR1Td-PgFd7rYDmjuOOmO5wjHsecF2xnhbw4rmY28qIliGBLCXPOJrv6PC2j8sMXZdear5uAgrvMOAWRjAYAtGNKshIOj6uj10ti5hKCeSigozIvSIi1oAaWNw60LHb6sTwb_aFkxqhZxc5MiCnKHrVe_jqOGYZtkCiPai6dUQdqsh-RKKqzA2ZzLW3GBwBpYuPfEGUTybkpTiFSoUNYjrnrPdq9zrc_t0hqKqPXEW4XJlCPA
+
+###
+GET http://latitude:9020/telco/v1/api/saldo?msisdn=081112222&refid=2345642
+Content-Type: application/json
+
+###
+GET http://localhost:9020/telco/v1/api/modulset?msisdn=081112222&refid=20000&modulset=telco%3Avalid%20telco%3Aactive%20telco%3Aaktivasi HTTP/1.1
+
+###
+GET https://apidev.ioh.co.id/oauth2-client/accesstoken?grant_type=client_credentials
+Authorization: OGpVYVpFbUFuZ250dUd0VXI1Mlg4R00zWUdMOVZiTXNpRWI0bG9HaGYxM2ROUlljOm5EYnVQaUZJbUI3ZFk5a3VoQjY3T1hLTzNlR1VIRlhua3I4MWNXVWo4MHNRTmppdDJ0Rk5VVW10WlFweUQxNDM=
+
+###
+GET https://apidev.ioh.co.id/oauth2-client/accesstoken?grant_type=client_credentials
+Authorization: OGpVYVpFbUFuZ250dUd0VXI1Mlg4R00zWUdMOVZiTXNpRWI0bG9HaGYxM2ROUlljOm5EYnVQaUZJbUI3ZFk5a3VoQjY3T1hLTzNlR1VIRlhua3I4MWNXVWo4MHNRTmppdDJ0Rk5VVW10WlFweUQxNDM=
+
+###
+POST https://apidev.ioh.co.id/subscribers/consent HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer luoOrUDOWNd912vK4VfAOavlTnro
+
+{
+    "msisdn": "628567885959",
+    "partner": "APITest",
+    "action": "CONSENT_GRANTED",
+    "timestamp": "2022-11-09T10:45:24"
+}
+
+###
+POST https://apidev.ioh.co.id/location/verify HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer Ssn3BYIr7kFhiQlw4W682tN3lcHx
+
+{
+    "msisdn": "628567885959",
+    "partner": "APITest",
+    "transid": "23437",
+    "locationId": "3175021007"
+}
+
+###
+POST https://apidev.ioh.co.id/subscribers/data/quota HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer Ssn3BYIr7kFhiQlw4W682tN3lcHx
+
+{
+    "msisdn": "628567885959",
+    "partner": "APITest",
+    "transid": "23437"
+}
+
+###
+{
+  "refresh_token_expires_in": "0",
+  "api_product_list": "[Subscriber Data Status, Subscriber Package Expiration Status, Subscriber Number Expiration Status, Subscriber Validity Product, Subscriber Active Product, Subscriber Balance Status, Subscriber Billing Status, Location Verification, Subscriber Tenure Product, Subscriber Quota Status, Subscriber Prepaid Status, Subscriber Activation Status]",
+  "api_product_list_json": [
+    "Subscriber Data Status",
+    "Subscriber Package Expiration Status",
+    "Subscriber Number Expiration Status",
+    "Subscriber Validity Product",
+    "Subscriber Active Product",
+    "Subscriber Balance Status",
+    "Subscriber Billing Status",
+    "Location Verification",
+    "Subscriber Tenure Product",
+    "Subscriber Quota Status",
+    "Subscriber Prepaid Status",
+    "Subscriber Activation Status"
+  ],
+  "organization_name": "apigee-indosat",
+  "developer.email": "sugik.iryanto@3techbiz.com",
+  "token_type": "BearerToken",
+  "issued_at": "1667968925884",
+  "client_id": "8jUaZEmAngntuGtUr52X8GM3YGL9VbMsiEb4loGhf13dNRYc",
+  "access_token": "Ssn3BYIr7kFhiQlw4W682tN3lcHx",
+  "application_name": "53a0b4ba-c0f7-4fea-8779-7093a7322078",
+  "scope": "",
+  "expires_in": "3599",
+  "refresh_count": "0",
+  "status": "approved"
+}

@@ -9,10 +9,19 @@ Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJCT2VFdG
 ###
 POST http://localhost:9030/middlewr/v1/api/getdata
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJqTlRDMUI1ZEhZNklwRml0dEViQi1qOU4zSHlocVBqQVR0OG1iZmpmbXJBIn0.eyJleHAiOjE2Njc4Mjk1MDIsImlhdCI6MTY2NzgyOTIwMiwianRpIjoiMGNiZTA4MTMtZmNlMS00ODFiLTgyNWMtZjc2YTM1NDRmYmE1IiwiaXNzIjoiaHR0cDovL2tleWNsb2FrOjgwODAvcmVhbG1zL2h1amFuYmFkYWkiLCJzdWIiOiJlNDkxMmRmOS04Y2QxLTQwYTctOWJkNi00NmE5MDQwYzFjOWUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTVUFCNDY5MDYiLCJzY29wZSI6ImNkZC5hcGkuciIsImNsaWVudElkIjoiU1VBQjQ2OTA2IiwiY2xpZW50SG9zdCI6IjE3Mi4yNC4wLjEiLCJjbGllbnRBZGRyZXNzIjoiMTcyLjI0LjAuMSJ9.gVleWnEpGiULdnY0woIfR0Utqu7qHUvmRQe2xYWDxoavwhiaejmVmIAABc8unbvdcKPJchNGAkOqtgzOtwjSaKYeeMPBpucd7F_a0RYIL0OS4HAxwlUn6qVDGm6FRux8g0PGr0E9hKuBl2h3xRtyXrHRCPM1u_v4owo6dFJ-qUmkElLQAVyiPbsJN2El2bj3e32I8wLfi51Mqi4H0aYmmnlKz-8DTOcl_hskxrzwMfqPGKdR-9erKhbnh8N_z7FvNSUmeEEry4LNSWRq88fhVgq0lpQ-l9qMSXWvjWJ8gy5qohqqBibc0IkN_-b7A2eV9qrHKlVhHwIi8QEgd4lNvQ
 
 {
     "msisdn": "081112222",
     "refid": "9493894831",
     "telcoParameters": ["telco:active", "telco:billing"]
+}
+
+###
+POST http://localhost:9030/middlewr/v1/api/getdata
+Content-Type: application/json
+
+{
+    "msisdn": "081112222",
+    "refid": "9493894831",
+    "telcoParameters": ["telco:valid", "telco:aktivasi"]
 }
