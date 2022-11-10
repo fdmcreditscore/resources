@@ -1,3 +1,4 @@
+
 version: '3.4'
 
 services:
@@ -118,7 +119,7 @@ services:
         - INDOSAT_PARTNERKEY=8jUaZEmAngntuGtUr52X8GM3YGL9VbMsiEb4loGhf13dNRYc
         - INDOSAT_PARTNERSECRET=nDbuPiFImB7dY9kuhB67OXKO3eGUHFXnkr81cWUj80sQNjit2tFNUUmtZQpyD143
         - SPRING_BOOT_ADMIN_CLIENT_URL=http://latitude:8761/sbadmin
-        - SPRING_BOOT_ADMIN_CLIENT_INSTANCE_MANAGEMENTBASEURL=http://latitude:9021
+        - SPRING_BOOT_ADMIN_CLIENT_INSTANCE_MANAGEMENTBASEURL=http://latitude:9020
         - EUREKA_CLIENT_ENABLED=true
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://latitude:8761/eureka/
         - INDOSAT.URL.BASE=http://mockisat:9021/subscribers
