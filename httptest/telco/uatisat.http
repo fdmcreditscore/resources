@@ -3,16 +3,11 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ2WXk1SURhenJVdUUzVmxfUTRMRVd5YWRHaTFITDF2UmxNSURVV1NSSHBJIn0.eyJleHAiOjE2NjY1MzM1MjIsImlhdCI6MTY2NjUzMzIyMiwianRpIjoiMDNjYmZjMWItMDhjMS00M2QwLTgwMjEtMGYyNTY1MTViN2FlIiwiaXNzIjoiaHR0cDovL2xhdGl0dWRlOjgxODAvcmVhbG1zL2h1amFuYmFkYWkiLCJzdWIiOiI4NDFhZTM3YS1lYWI4LTRlNDktOGY3NC03Zjg2YTYyMTJjYjQiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJBUTY2NjIzIiwic2NvcGUiOiJjZGQuYXBpLnIiLCJjbGllbnRJZCI6IkFRNjY2MjMiLCJjbGllbnRIb3N0IjoiMTkyLjE2OC4wLjE5OCIsImNsaWVudEFkZHJlc3MiOiIxOTIuMTY4LjAuMTk4In0.WmbpbHBfiY0jfTQ3JloWhi73uMn-CE2QlZYqTeK5tHQCk-ceVoSn2dHpkNlEEjhHgp9yVEbCeJN3MkwWuMS4BCA0K5ApVmRd77FlKyR1Td-PgFd7rYDmjuOOmO5wjHsecF2xnhbw4rmY28qIliGBLCXPOJrv6PC2j8sMXZdear5uAgrvMOAWRjAYAtGNKshIOj6uj10ti5hKCeSigozIvSIi1oAaWNw60LHb6sTwb_aFkxqhZxc5MiCnKHrVe_jqOGYZtkCiPai6dUQdqsh-RKKqzA2ZzLW3GBwBpYuPfEGUTybkpTiFSoUNYjrnrPdq9zrc_t0hqKqPXEW4XJlCPA
 
 ###
-GET http://latitude:9020/telco/v1/api/aktivasi?msisdn=081112222&refid=2345642
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ2WXk1SURhenJVdUUzVmxfUTRMRVd5YWRHaTFITDF2UmxNSURVV1NSSHBJIn0.eyJleHAiOjE2NjY1MzM1MjIsImlhdCI6MTY2NjUzMzIyMiwianRpIjoiMDNjYmZjMWItMDhjMS00M2QwLTgwMjEtMGYyNTY1MTViN2FlIiwiaXNzIjoiaHR0cDovL2xhdGl0dWRlOjgxODAvcmVhbG1zL2h1amFuYmFkYWkiLCJzdWIiOiI4NDFhZTM3YS1lYWI4LTRlNDktOGY3NC03Zjg2YTYyMTJjYjQiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJBUTY2NjIzIiwic2NvcGUiOiJjZGQuYXBpLnIiLCJjbGllbnRJZCI6IkFRNjY2MjMiLCJjbGllbnRIb3N0IjoiMTkyLjE2OC4wLjE5OCIsImNsaWVudEFkZHJlc3MiOiIxOTIuMTY4LjAuMTk4In0.WmbpbHBfiY0jfTQ3JloWhi73uMn-CE2QlZYqTeK5tHQCk-ceVoSn2dHpkNlEEjhHgp9yVEbCeJN3MkwWuMS4BCA0K5ApVmRd77FlKyR1Td-PgFd7rYDmjuOOmO5wjHsecF2xnhbw4rmY28qIliGBLCXPOJrv6PC2j8sMXZdear5uAgrvMOAWRjAYAtGNKshIOj6uj10ti5hKCeSigozIvSIi1oAaWNw60LHb6sTwb_aFkxqhZxc5MiCnKHrVe_jqOGYZtkCiPai6dUQdqsh-RKKqzA2ZzLW3GBwBpYuPfEGUTybkpTiFSoUNYjrnrPdq9zrc_t0hqKqPXEW4XJlCPA
-
-###
 GET http://latitude:9020/telco/v1/api/saldo?msisdn=081112222&refid=2345642
 Content-Type: application/json
 
 ###
-GET http://localhost:9020/telco/v1/api/modulset?msisdn=081112222&refid=20000&modulset=telco%3Avalid%20telco%3Aactive%20telco%3Aaktivasi HTTP/1.1
+GET http://cdd-cloud:9020/telco/v1/api/modulset?msisdn=628567885959&refid=20000&modulset=telco%3Avalid%20telco%3Aactive%20telco%3Aaktivasi HTTP/1.1
 
 ###
 GET https://apidev.ioh.co.id/oauth2-client/accesstoken?grant_type=client_credentials
@@ -25,7 +20,7 @@ Authorization: OGpVYVpFbUFuZ250dUd0VXI1Mlg4R00zWUdMOVZiTXNpRWI0bG9HaGYxM2ROUlljO
 ###
 POST https://apidev.ioh.co.id/subscribers/consent HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer luoOrUDOWNd912vK4VfAOavlTnro
+Authorization: Bearer aTek4DUMagLUKjKeKpnAmg6LPWFI
 
 {
     "msisdn": "628567885959",
@@ -37,7 +32,7 @@ Authorization: Bearer luoOrUDOWNd912vK4VfAOavlTnro
 ###
 POST https://apidev.ioh.co.id/location/verify HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer Ssn3BYIr7kFhiQlw4W682tN3lcHx
+Authorization: Bearer dx3xUOQcKTBt9HR0SSUBRrfFj9Bl
 
 {
     "msisdn": "628567885959",

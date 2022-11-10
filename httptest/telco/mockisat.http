@@ -23,9 +23,9 @@ GET https://apidev.ioh.co.id/oauth2-client/accesstoken?grant_type=client_credent
 Authorization: OGpVYVpFbUFuZ250dUd0VXI1Mlg4R00zWUdMOVZiTXNpRWI0bG9HaGYxM2ROUlljOm5EYnVQaUZJbUI3ZFk5a3VoQjY3T1hLTzNlR1VIRlhua3I4MWNXVWo4MHNRTmppdDJ0Rk5VVW10WlFweUQxNDM=
 
 ###
-POST https://apidev.ioh.co.id/subscribers/consent HTTP/1.1
+POST http://latitude:9021/subscribers/consent HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer luoOrUDOWNd912vK4VfAOavlTnro
+Authorization: Bearer d3d1771c-200c-412c-b191-a5c026088fc8
 
 {
     "msisdn": "628567885959",
