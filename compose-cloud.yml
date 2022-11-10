@@ -75,7 +75,7 @@ services:
       expose: 
         - '8761'
       extra_hosts:
-        - 'latitude:192.168.0.195'
+        - 'cdd-cloud:172.16.0.100'
       ports:
         - 8761:8761
       # networks:
@@ -90,8 +90,8 @@ services:
         - SPRING.DATASOURCE.USERNAME=cdd 
         - SPRING.DATASOURCE.PASSWORD=cdd 
         - SPRING_JPA_HIBERNATE_DDL_AUTO=none
-        - SPRING_BOOT_ADMIN_CLIENT_URL=http://latitude:8761/sbadmin
-        - SPRING_BOOT_ADMIN_CLIENT_INSTANCE_MANAGEMENTBASEURL=http://latitude:9021
+        - SPRING_BOOT_ADMIN_CLIENT_URL=http://cdd-cloud:8761/sbadmin
+        - SPRING_BOOT_ADMIN_CLIENT_INSTANCE_MANAGEMENTBASEURL=http://cdd-cloud:9021
       expose:
         - '9021'
       ports:
@@ -111,19 +111,17 @@ services:
       restart: "no"
       environment:
         - SPRING_DATASOURCE_URL=jdbc:postgresql://appdb:5432/appdb 
-        - SPRING.DATASOURCE.USERNAME=cdd 
         - SPRING.DATASOURCE.PASSWORD=cdd 
-        - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+        - SPRING_BOOT_ADMIN_CLIENT_URL=http://cdd-cloud:8761/sbadmin
+        - SPRING_BOOT_ADMIN_CLIENT_INSTANCE_MANAGEMENTBASEURL=http://cdd-cloud:9021
+        - EUREKA_CLIENT_ENABLED=true
+        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://cdd-cloud:8761/eureka/
+        - EUREKA_INSTANCE_IP_ADDRESS=172.16.0.100
         - INDOSAT_PARTNERID=APITest
         - INDOSAT_PARTNERKEY=8jUaZEmAngntuGtUr52X8GM3YGL9VbMsiEb4loGhf13dNRYc
         - INDOSAT_PARTNERSECRET=nDbuPiFImB7dY9kuhB67OXKO3eGUHFXnkr81cWUj80sQNjit2tFNUUmtZQpyD143
-        - SPRING_BOOT_ADMIN_CLIENT_URL=http://latitude:8761/sbadmin
-        - SPRING_BOOT_ADMIN_CLIENT_INSTANCE_MANAGEMENTBASEURL=http://latitude:9021
-        - EUREKA_CLIENT_ENABLED=true
-        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://latitude:8761/eureka/
-        - INDOSAT.URL.BASE=http://mockisat:9021/subscribers
-        - INDOSAT_URL_ACCESSTOKEN=http://mockisat:9021/oauth2-client/accesstoken
-        - EUREKA_INSTANCE_IP_ADDRESS=192.168.0.195
+        - INDOSAT.URL.BASE=https://apidev.ioh.co.id/subscribers
+        - INDOSAT_URL_ACCESSTOKEN=https://apidev.ioh.co.id/oauth2-client/accesstoken
       expose:
         - '9020'
       ports:
@@ -142,13 +140,12 @@ services:
       image: fransmzh/cdd-mgmt-server
       restart: "no"
       environment:
-        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://latitude:8761/eureka/
-        - EUREKA_INSTANCE_IP_ADDRESS=192.168.0.195
+        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://cdd-cloud:8761/eureka/
+        - EUREKA_INSTANCE_IP_ADDRESS=172.16.0.100
         - KEYCLOAK_BASEURL=http://keycloak:8080
-        - SPRING_BOOT_ADMIN_CLIENT_URL=http://latitude:8761/sbadmin
-        - SPRING_BOOT_ADMIN_CLIENT_INSTANCE_MANAGEMENTBASEURL=http://latitude:9021
+        - SPRING_BOOT_ADMIN_CLIENT_URL=http://cdd-cloud:8761/sbadmin
+        - SPRING_BOOT_ADMIN_CLIENT_INSTANCE_MANAGEMENTBASEURL=http://cdd-cloud:9021
         - SPRING_DATASOURCE_URL=jdbc:postgresql://cdddb:5432/appdb 
-        - SPRING.DATASOURCE.USERNAME=cdd 
         - SPRING.DATASOURCE.PASSWORD=cdd 
         - SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_KEYCLOAK_ISSUERURI=http://keycloak:8080/realms/hujanbadai
       ports:
@@ -170,12 +167,11 @@ services:
       restart: "no"
       environment:
         - SPRING_DATASOURCE_URL=jdbc:postgresql://cdddb:5432/appdb 
-        - SPRING.DATASOURCE.USERNAME=cdd 
         - SPRING.DATASOURCE.PASSWORD=cdd 
-        - SPRING_BOOT_ADMIN_CLIENT_INSTANCE_MANAGEMENTBASEURL=http://latitude:9021
-        - SPRING_BOOT_ADMIN_CLIENT_URL=http://latitude:8761/sbadmin
-        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://latitude:8761/eureka/
-        - EUREKA_INSTANCE_IP_ADDRESS=192.168.0.195
+        - SPRING_BOOT_ADMIN_CLIENT_INSTANCE_MANAGEMENTBASEURL=http://cdd-cloud:9021
+        - SPRING_BOOT_ADMIN_CLIENT_URL=http://cdd-cloud:8761/sbadmin
+        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://cdd-cloud:8761/eureka/
+        - EUREKA_INSTANCE_IP_ADDRESS=172.16.0.100
         - EUREKA_INSTANCE_PREFERIPADDRESS=true
         - APP_TELCO_URL=http://telco-client/telco
         - SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUERURI=http://keycloak:8080/realms/hujanbadai
