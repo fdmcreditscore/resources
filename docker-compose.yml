@@ -193,9 +193,9 @@ services:
       networks:
         - docnet
 
-    identifai-client:
-      container_name: identifai-client
-      image: fransmzh/cdd-identifai-client
+    identity-client:
+      container_name: identity-client
+      image: fransmzh/cdd-identity-client
       restart: "no"
       environment:
         - SPRING_BOOT_ADMIN_CLIENT_URL=http://latitude:8761/sbadmin

@@ -190,6 +190,28 @@ services:
       networks:
         - docnet
 
+    identity-client:
+      container_name: identity-client
+      image: fransmzh/cdd-identity-client
+      restart: "no"
+      environment:
+        - SPRING_BOOT_ADMIN_CLIENT_URL=http://cdd-cloud:8761/sbadmin
+        - SPRING_BOOT_ADMIN_CLIENT_INSTANCE_MANAGEMENTBASEURL=http://cdd-cloud:9020
+        - EUREKA_CLIENT_ENABLED=true
+        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://cdd-cloud:8761/eureka/
+        - EUREKA_INSTANCE_IP_ADDRESS=192.168.0.195
+      expose:
+        - '9036'
+      ports:
+        - 9036:9036
+      extra_hosts:
+        - 'latitude:192.168.0.195'
+        - 'cdd-cloud:172.16.0.100'
+      depends_on:
+        - discovery
+      networks:
+        - docnet
+
 volumes:
   appdb: {}
   kcdb: {}
