@@ -112,18 +112,16 @@ services:
       restart: "no"
       environment:
         - SPRING_DATASOURCE_URL=jdbc:postgresql://appdb:5432/appdb 
-        - SPRING.DATASOURCE.USERNAME=cdd 
         - SPRING.DATASOURCE.PASSWORD=cdd 
-        - SPRING_JPA_HIBERNATE_DDL_AUTO=none
         - INDOSAT_PARTNERID=APITest
         - INDOSAT_PARTNERKEY=8jUaZEmAngntuGtUr52X8GM3YGL9VbMsiEb4loGhf13dNRYc
         - INDOSAT_PARTNERSECRET=nDbuPiFImB7dY9kuhB67OXKO3eGUHFXnkr81cWUj80sQNjit2tFNUUmtZQpyD143
+        - INDOSAT_URL_ACCESSTOKEN=http://mockisat:9021/oauth2-client/accesstoken
+        - INDOSAT.URL.BASE=http://mockisat:9021/subscribers
         - SPRING_BOOT_ADMIN_CLIENT_URL=http://latitude:8761/sbadmin
         - SPRING_BOOT_ADMIN_CLIENT_INSTANCE_MANAGEMENTBASEURL=http://latitude:9020
         - EUREKA_CLIENT_ENABLED=true
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://latitude:8761/eureka/
-        - INDOSAT.URL.BASE=http://mockisat:9021/subscribers
-        - INDOSAT_URL_ACCESSTOKEN=http://mockisat:9021/oauth2-client/accesstoken
         - EUREKA_INSTANCE_IP_ADDRESS=192.168.0.195
       expose:
         - '9020'
@@ -192,6 +190,28 @@ services:
         - discovery
         - telco-client
         - keycloak
+      networks:
+        - docnet
+
+    identifai-client:
+      container_name: identifai-client
+      image: fransmzh/cdd-identifai-client
+      restart: "no"
+      environment:
+        - SPRING_BOOT_ADMIN_CLIENT_URL=http://latitude:8761/sbadmin
+        - SPRING_BOOT_ADMIN_CLIENT_INSTANCE_MANAGEMENTBASEURL=http://latitude:9020
+        - EUREKA_CLIENT_ENABLED=true
+        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://latitude:8761/eureka/
+        - EUREKA_INSTANCE_IP_ADDRESS=192.168.0.195
+      expose:
+        - '9036'
+      ports:
+        - 9036:9036
+      extra_hosts:
+        - 'latitude:192.168.0.195'
+        - 'cdd-cloud:172.16.0.100'
+      depends_on:
+        - discovery
       networks:
         - docnet
 
