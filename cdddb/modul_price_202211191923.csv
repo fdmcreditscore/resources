@@ -1,0 +1,13 @@
+"module_name","endpoint","price"
+telco:valid,https://apidev.ioh.co.id/subscribers/valid,4000
+telco:active,https://apidev.ioh.co.id/subscribers/active,4000
+telco:jeniskartu,https://apidev.ioh.co.id/subscribers/prepaid,4000
+telco:billing,https://apidev.ioh.co.id/subscribers/billing,4000
+telco:paketdata,https://apidev.ioh.co.id/subscribers/data,4000
+telco:saldo,https://apidev.ioh.co.id/subscribers/balance,4000
+telco:tenure,https://apidev.ioh.co.id/subscribers/tenure,4000
+telco:expire,https://apidev.ioh.co.id/subscribers/expiration,4000
+telco:dataexpire,https://apidev.ioh.co.id/subscribers/data/expiration,4000
+isat:location,https://apidev.ioh.co.id/location/verify,4000
+isat:aktivasi,https://apidev.ioh.co.id/subscribers/activation,4000
+telco:quotadata,https://apidev.ioh.co.id/subscribers/data/quota,4000
